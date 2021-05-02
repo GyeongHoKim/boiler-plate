@@ -2,7 +2,7 @@ goorm.manifest
 
 node_modules/
 package-lock.json
-/server/config/dev.js
+dev.js
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
