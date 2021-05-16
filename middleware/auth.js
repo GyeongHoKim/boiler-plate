@@ -14,4 +14,4 @@ let auth = (req, res, next) => {
     })
 }
 
-module.eports = { auth };
+module.exports = { auth };
