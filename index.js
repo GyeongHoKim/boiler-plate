@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 5000;
 const bodyParser = require("body-parser");
-const mongoURI = require("./dev");
+const config = require('./config/key');
 const { User } = require("./models/User");
 
 //application/x-www-form-urlencoded
@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 const mongoose = require("mongoose");
 mongoose
-  .connect(mongoURI.mongoURI, {
+  .connect(config.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
