@@ -5,6 +5,18 @@ function LandingPage(props) {
   useEffect(() => {
     axios.get("api/test").then((response) => console.log(response.data));
   }, []);
+
+  const onClickHandler = () => {
+    axios.get(`/api/users/logout`)
+    .then(response => {
+      if(response.data.success) {
+        props.history.push("/login")
+      } else {
+        alert('로그아웃에 실패했습니다')
+      }
+    })
+  }
+
   return (
     <div
       style={{
@@ -16,6 +28,7 @@ function LandingPage(props) {
       }}
     >
       <h2>시작페이지</h2>
+      <button onClick={onClickHandler}>로그아웃</button>
     </div>
   );
 }
